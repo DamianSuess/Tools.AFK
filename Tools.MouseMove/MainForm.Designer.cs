@@ -1,6 +1,6 @@
-﻿namespace Tools.MouseMove
+﻿namespace Tools.Afk
 {
-  partial class Form1
+  partial class MainForm
   {
     /// <summary>
     /// Required designer variable.
@@ -33,6 +33,10 @@
       this.UdInterval = new System.Windows.Forms.NumericUpDown();
       this.label1 = new System.Windows.Forms.Label();
       this.ChkBoundToForm = new System.Windows.Forms.CheckBox();
+      this.chkSimKeyPress = new System.Windows.Forms.CheckBox();
+      this.label2 = new System.Windows.Forms.Label();
+      this.LblCounter = new System.Windows.Forms.Label();
+      this.ChkSimMouse = new System.Windows.Forms.CheckBox();
       ((System.ComponentModel.ISupportInitialize)(this.UdInterval)).BeginInit();
       this.SuspendLayout();
       // 
@@ -90,26 +94,74 @@
       // ChkBoundToForm
       // 
       this.ChkBoundToForm.AutoSize = true;
-      this.ChkBoundToForm.Location = new System.Drawing.Point(16, 67);
+      this.ChkBoundToForm.Enabled = false;
+      this.ChkBoundToForm.Location = new System.Drawing.Point(203, 12);
       this.ChkBoundToForm.Name = "ChkBoundToForm";
       this.ChkBoundToForm.Size = new System.Drawing.Size(111, 17);
       this.ChkBoundToForm.TabIndex = 4;
       this.ChkBoundToForm.Text = "Bound to Window";
       this.ChkBoundToForm.UseVisualStyleBackColor = true;
       // 
-      // Form1
+      // chkSimKeyPress
+      // 
+      this.chkSimKeyPress.AutoSize = true;
+      this.chkSimKeyPress.Checked = true;
+      this.chkSimKeyPress.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.chkSimKeyPress.Location = new System.Drawing.Point(203, 35);
+      this.chkSimKeyPress.Name = "chkSimKeyPress";
+      this.chkSimKeyPress.Size = new System.Drawing.Size(90, 17);
+      this.chkSimKeyPress.TabIndex = 5;
+      this.chkSimKeyPress.Text = "Sim KeyPress";
+      this.chkSimKeyPress.UseVisualStyleBackColor = true;
+      // 
+      // label2
+      // 
+      this.label2.AutoSize = true;
+      this.label2.Location = new System.Drawing.Point(13, 66);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(47, 13);
+      this.label2.TabIndex = 6;
+      this.label2.Text = "Counter:";
+      // 
+      // LblCounter
+      // 
+      this.LblCounter.AutoSize = true;
+      this.LblCounter.Location = new System.Drawing.Point(74, 66);
+      this.LblCounter.Name = "LblCounter";
+      this.LblCounter.Size = new System.Drawing.Size(13, 13);
+      this.LblCounter.TabIndex = 7;
+      this.LblCounter.Text = "0";
+      // 
+      // ChkSimMouse
+      // 
+      this.ChkSimMouse.AutoSize = true;
+      this.ChkSimMouse.Checked = true;
+      this.ChkSimMouse.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.ChkSimMouse.Location = new System.Drawing.Point(203, 58);
+      this.ChkSimMouse.Name = "ChkSimMouse";
+      this.ChkSimMouse.Size = new System.Drawing.Size(105, 17);
+      this.ChkSimMouse.TabIndex = 8;
+      this.ChkSimMouse.Text = "Sim MouseMove";
+      this.ChkSimMouse.UseVisualStyleBackColor = true;
+      // 
+      // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(187, 94);
+      this.ClientSize = new System.Drawing.Size(321, 93);
+      this.Controls.Add(this.ChkSimMouse);
+      this.Controls.Add(this.LblCounter);
+      this.Controls.Add(this.label2);
+      this.Controls.Add(this.chkSimKeyPress);
       this.Controls.Add(this.ChkBoundToForm);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.UdInterval);
       this.Controls.Add(this.BtnStop);
       this.Controls.Add(this.BtnStart);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
-      this.Name = "Form1";
-      this.Text = "Move my mouse";
+      this.Name = "MainForm";
+      this.Text = "Cheap AFK Tool";
       this.Load += new System.EventHandler(this.Form1_Load);
       ((System.ComponentModel.ISupportInitialize)(this.UdInterval)).EndInit();
       this.ResumeLayout(false);
@@ -124,6 +176,10 @@
     private System.Windows.Forms.NumericUpDown UdInterval;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.CheckBox ChkBoundToForm;
+    private System.Windows.Forms.CheckBox chkSimKeyPress;
+    private System.Windows.Forms.Label label2;
+    private System.Windows.Forms.Label LblCounter;
+    private System.Windows.Forms.CheckBox ChkSimMouse;
   }
 }
 

@@ -4,16 +4,17 @@ using System.Timers;
 using System.Windows.Forms;
 using Timer = System.Timers.Timer;
 
-namespace Tools.MouseMove
+namespace Tools.Afk
 {
-  public partial class Form1 : Form
+  public partial class MainForm : Form
   {
     private Timer _timer = new Timer();
 
     private bool _moveMouse = true;
-    private bool _pressKeys = false;
+    private bool _pressKeys = true;
+    private int _counter = 0;
 
-    public Form1()
+    public MainForm()
     {
       InitializeComponent();
 
@@ -24,6 +25,16 @@ namespace Tools.MouseMove
 
     private void BtnStart_Click(object sender, EventArgs e)
     {
+
+      _moveMouse = ChkSimMouse.Checked;
+      _pressKeys = chkSimKeyPress.Checked;
+
+      if (!_moveMouse && !_pressKeys)
+      {
+        MessageBox.Show("You must check either move mouse or press keys!");
+        return;
+      }
+
       EnableControls(false);
 
       var ms = TimeSpan.FromMinutes((int)UdInterval.Value).TotalMilliseconds;
@@ -38,12 +49,15 @@ namespace Tools.MouseMove
     {
       _timer.Enabled = false;
       Cursor.Clip = new Rectangle();
+      _counter = 0;
 
       EnableControls(true);
     }
 
     private void OnTimerElapsed(object sender, ElapsedEventArgs e)
     {
+      IncrementCounter();
+
       if (_moveMouse)
         MoveCursor();
 
@@ -89,6 +103,12 @@ namespace Tools.MouseMove
       BtnStart.Enabled = enabled;
       BtnStop.Enabled = !enabled;
       UdInterval.Enabled = enabled;
+    }
+
+    private void IncrementCounter()
+    {
+      _counter++;
+      LblCounter.Text = _counter.ToString();
     }
 
     private void Form1_Load(object sender, EventArgs e)
