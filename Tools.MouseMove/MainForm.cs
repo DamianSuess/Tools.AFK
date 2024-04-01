@@ -108,7 +108,10 @@ namespace Tools.Afk
     private void IncrementCounter()
     {
       _counter++;
-      LblCounter.Text = _counter.ToString();
+
+      // Protect form Cross-thread operation
+      ////LblCounter.Text = _counter.ToString();
+      LblCounter.InvokeIfRequired(c => { c.Text = _counter.ToString(); });
     }
 
     private void Form1_Load(object sender, EventArgs e)
