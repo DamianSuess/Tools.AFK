@@ -14,3 +14,8 @@ This key no longer exists on modern keyboards, however, it is still registered w
 
 ### Mouse Movement
 Uses a settle mouse movement. However, this doesn't always get picked up when moving only a couple of pixels and some admin policies protect against this method. This method can also become annoying when presenting and you need precision.
+
+
+## References
+
+This _Away From Keyboard_ mini-app can be easily plugged into the [ToolsHub](https://github.com/xenoinc/ToolsHub) accessability launcher as an add-on.
